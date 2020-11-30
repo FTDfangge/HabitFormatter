@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
-    private Button login;
+    private Button login; //login
     private Button fgtpsw;
     private Button registerBtn;
     private EditText usrname;
