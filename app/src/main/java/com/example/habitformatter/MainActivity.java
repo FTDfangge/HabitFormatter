@@ -10,6 +10,7 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
     private Button login;
+    // test commit
     private Button fgtpsw;
     private Button registerBtn;
     private EditText usrname;
