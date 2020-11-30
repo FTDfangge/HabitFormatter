@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText psw;
 
     //test
+    //2020/11/30/ljx
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
