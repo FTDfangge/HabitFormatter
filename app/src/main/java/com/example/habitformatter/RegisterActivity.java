@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.habitformatter.Classes.SenderToServer;
+
 public class RegisterActivity extends AppCompatActivity {
     private EditText usrname;
     private EditText idnum;
@@ -29,6 +31,13 @@ public class RegisterActivity extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (!psw.getText().equals(cfmpsw.getText())) {
+                    Toast.makeText(getApplicationContext(), "密码需要一致", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                SenderToServer.sender.sendMsg("Register "+usrname.getText().toString()+idnum.getText().toString()+psw.getText().toString());
+
                 Toast.makeText(getApplicationContext(),"注册成功", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(RegisterActivity.this,HabitChoosing.class);
                 startActivity(intent);

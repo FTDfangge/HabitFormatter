@@ -19,6 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.habitformatter.Classes.Habit;
+import com.example.habitformatter.Classes.SenderToServer;
 
 import java.io.InputStream;
 
@@ -120,6 +121,7 @@ public class HabitChoosing extends AppCompatActivity {
                             public void onClick(DialogInterface dialog, int whichButton) {
                                 Intent intent = new Intent(HabitChoosing.this,DakaRecordActivity.class);
                                 String msg = habit.habitName;
+                                SenderToServer.sender.sendMsg("habitChoosing "+msg);
                                 intent.putExtra(EXTRA_MESSAGE,msg);
                                 startActivity(intent);
                                 finish();

@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.habitformatter.Classes.Habit;
+import com.example.habitformatter.Classes.SenderToServer;
 
 import org.w3c.dom.Text;
 
@@ -42,7 +43,7 @@ public class DakaActivity extends AppCompatActivity {
         needEvidenceText.setText("不需要凭证");
 
         titleText=findViewById(R.id.textView12);
-        long time = System.currentTimeMillis();
+        final long time = System.currentTimeMillis();
         //将long类型的时间转换成日历格式
         Date data = new Date(time);
         // 转换格式，年月日时分秒 星期  的格式
@@ -57,6 +58,7 @@ public class DakaActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(DakaActivity.this,DakaActivity2.class);
                 intent1.putExtra(EXTRA_MESSAGE1,"T");
                 intent1.putExtra(EXTRA_MESSAGE2,habitName);
+                SenderToServer.sender.sendMsg("daka "+time);
                 startActivity(intent1);
                 finish();
             }
