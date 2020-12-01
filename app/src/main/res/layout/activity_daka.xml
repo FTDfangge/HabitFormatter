@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:scrollbarSize="5dp"
     tools:context=".DakaActivity">
+    
 
     <LinearLayout
         android:id="@+id/linearLayout2"
